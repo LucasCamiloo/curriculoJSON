@@ -1,0 +1,36 @@
+{
+  "nomeCompleto": "Douglas Silva Rocha",
+  "fotoBase64": "",
+  "dataNascimento": "25/09/1998",
+  "email": "silvadouglas887@gmail.com",
+  "telefone": "(11)99137-3425",
+  "linkedin": "https://www.linkedin.com/in/douglas-rocha-576815171/",
+  "github": "https://github.com/DalglishR",
+  "experiencias": [
+    {
+      "cargo": "Projetista",
+      "empresa": "DSautomacao",
+      "descricao": "Desenvolvimento de projeto elétrico e pneumático",
+      "dataInicio": "2022",
+      "dataTermino": "Atual"
+    }
+  ],
+  "formacao": [
+    {
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "instituicao": "Centro Universitário Senac",
+      "dataTermino": "2026"
+    },
+    {
+      "curso": "Técnico em eletroeletrônica",
+      "instituicao": "Senai",
+      "dataTermino": "2018"
+    }
+  ],
+  "conhecimentos": [
+    "HTML5",
+    "CSS3", 
+    "JavaScript",
+    "MySQL"
+  ]
+}
