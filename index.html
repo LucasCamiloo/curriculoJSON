@@ -170,6 +170,42 @@
         .container {
             max-width: 1200px;
         }
+        
+        /* Estilos para os botões de seleção de currículo */
+        .btn-group .btn {
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-group .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline-primary {
+            color: #0d6efd;
+            border-color: #0d6efd;
+            background-color: transparent;
+        }
+        
+        .btn-outline-primary:hover {
+            color: white;
+            background-color: #0d6efd;
+        }
+        
+        .btn-outline-success {
+            color: #198754;
+            border-color: #198754;
+            background-color: transparent;
+        }
+        
+        .btn-outline-success:hover {
+            color: white;
+            background-color: #198754;
+        }
     </style>
 
     <script src="script.js"></script>
@@ -178,6 +214,18 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-10">
+                <!-- Botões para alternar entre currículos -->
+                <div class="text-center mb-4">
+                    <div class="btn-group" role="group" aria-label="Seleção de currículo">
+                        <button type="button" class="btn btn-primary" onclick="carregarCurriculo('Douglas.json')">
+                            <i class="bi bi-person me-2"></i>Douglas
+                        </button>
+                        <button type="button" class="btn btn-success" onclick="carregarCurriculo('dados.json')">
+                            <i class="bi bi-person me-2"></i>Lucas
+                        </button>
+                    </div>
+                </div>
+                
                 <!-- Card Principal -->
                 <div class="card">
                     <!-- Header com Nome e Foto -->

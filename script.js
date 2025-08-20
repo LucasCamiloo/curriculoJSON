@@ -1,12 +1,12 @@
-// Função principal que carrega os dados
-async function carregarDados() {
+// Função para carregar currículo específico
+async function carregarCurriculo(arquivo) {
     try {
-        // Fazendo a requisição para o arquivo JSON
-        const resposta = await fetch('dados.json');
+        // Fazendo a requisição para o arquivo JSON especificado
+        const resposta = await fetch(arquivo);
         
         // Verificando se a requisição foi bem sucedida
         if (!resposta.ok) {
-            throw new Error('Erro ao carregar os dados');
+            throw new Error(`Erro ao carregar o arquivo ${arquivo}`);
         }
         
         // Convertendo a resposta para JSON
@@ -15,10 +15,38 @@ async function carregarDados() {
         // Chamando a função para preencher o HTML
         preencherHTML(dados);
         
+        // Atualizando o estado dos botões
+        atualizarEstadoBotoes(arquivo);
+        
     } catch (erro) {
         console.error('Erro:', erro);
-        alert('Erro ao carregar os dados do currículo');
+        alert(`Erro ao carregar o currículo de ${arquivo === 'Douglas.json' ? 'Douglas' : 'Lucas'}`);
     }
+}
+
+// Função para atualizar o estado visual dos botões
+function atualizarEstadoBotoes(arquivoAtivo) {
+    const btnDouglas = document.querySelector('button[onclick="carregarCurriculo(\'Douglas.json\')"]');
+    const btnLucas = document.querySelector('button[onclick="carregarCurriculo(\'dados.json\')"]');
+    
+    // Removendo classes ativas de todos os botões
+    btnDouglas.classList.remove('btn-primary', 'btn-outline-primary');
+    btnLucas.classList.remove('btn-success', 'btn-outline-success');
+    
+    // Aplicando classes ativas ao botão selecionado
+    if (arquivoAtivo === 'Douglas.json') {
+        btnDouglas.classList.add('btn-primary');
+        btnLucas.classList.add('btn-outline-success');
+    } else {
+        btnDouglas.classList.add('btn-outline-primary');
+        btnLucas.classList.add('btn-success');
+    }
+}
+
+// Função principal que carrega os dados (mantida para compatibilidade)
+async function carregarDados() {
+    // Por padrão, carrega o currículo do Lucas
+    await carregarCurriculo('dados.json');
 }
 
 // Função para preencher o HTML com os dados
